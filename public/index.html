@@ -12,6 +12,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/3.7.0/mapbox-gl.css" rel="stylesheet" />
+
+    <!-- <meta charset="UTF-8"> -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- <title>Mapbox Map</title> -->
+    <!-- Mapbox GL JS CSS -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
+    <style>
+        /* Set the dimensions of the map container */
+        #map {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
 </head>
 
 <body class="  w-full">
@@ -660,7 +673,21 @@
         </div>
 
         <div class="h-[184px] bg-red-300">
-            dkb
+          
+            <div id="map"></div>
+
+            <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+            <script>
+                mapboxgl.accessToken = 'AIzaSyC4vbeiurx5i8VjYzn-muTWLtKu23IfljQ';
+                const map = new mapboxgl.Map({
+                    container: 'map', 
+                    style: 'mapbox://styles/mapbox/streets-v11', 
+                    center: [-74.5, 40],
+                    zoom: 9 
+                });
+
+                map.addControl(new mapboxgl.NavigationControl());
+            </script>
         </div>
 
 
